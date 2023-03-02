@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5%;
+    box-shadow: 0 8px 8px 0px;
+    /* justify-content: center; */
+    /* justify-content: center; */
+    align-items: center;
+}
+
+header {
+    background: rgb(204, 43, 94);
+    background: linear-gradient(90deg, rgba(204, 43, 94, 1) 0%, rgba(117, 58, 136, 1) 46%, rgba(204, 43, 94, 1) 82%, rgba(117, 58, 136, 1) 100%);
+    width: 100%;
+    height: 10%;
+    font-size: 3em;
+    color: white;
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#TaskContainer {
+    width: 90%;
+    height: 70%;
+    background-color: white;
+}
+
+#container>div:nth-of-type(1) {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+
+#container>div:nth-of-type(1)>input {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 50%;
+}
+
+#AddTask {
+    width: 25%;
+    text-align: center;
+    animation-name: AddButtonRemoveBrightness;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+#AddTask:hover {
+    animation-name: AddButtonSetBrightness;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+.Task {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 50px;
+    grid-template-areas: "a b";
+    background-color: #E5E4E2;
+    margin-bottom: 1%;
+}
+
+.Task>p {
+    grid-area: a;
+    text-align: left;
+    margin-left: 5%;
+}
+
+.Task>div {
+    grid-area: b;
+    text-align: center;
+    animation-name: AddDeleteButtonRemoveBrightness;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.Task>div:hover {
+    /* grid-area: b; */
+    text-align: center;
+    cursor: pointer;
+    animation-name: AddDeleteButtonSetBrightness;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes AddButtonSetBrightness {
+    0% {
+        color: green;
+    }
+    100% {
+        color: lightgreen;
+    }
+}
+
+@keyframes AddButtonRemoveBrightness {
+    0% {
+        color: lightgreen;
+    }
+    100% {
+        color: green;
+    }
+}
+
+@keyframes AddDeleteButtonSetBrightness {
+    0% {
+        color: red;
+    }
+    100% {
+        color: lightcoral;
+    }
+}
+
+@keyframes AddDeleteButtonRemoveBrightness {
+    0% {
+        color: lightcoral;
+    }
+    100% {
+        color: red;
+    }
+}
